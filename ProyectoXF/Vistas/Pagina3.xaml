@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoXF.Vistas.Pagina3"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Vertical option start para que se ponga al inicio-->
+            <Image Source="flechaVolver.png" HeightRequest="30" HorizontalOptions="Start" Margin="12"
+               VerticalOptions="Start" >
+
+                <!--Usamos estas funciones para poder hacer uso del command-->
+                <Image.GestureRecognizers>
+
+                    <TapGestureRecognizer Command="{Binding VolverCommand}"/>
+
+                </Image.GestureRecognizers>
+
+                <!--Hay que cerrar la etiqueta de imaegn-->
+            </Image>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+
+                <!--se pone el twoday para indicar que van haber cambios de fecha-->
+                <DatePicker Date="{Binding Fecha,Mode=TwoWay}">
+
+                    <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
+                    
+                </DatePicker>
+
+                <Label Text="{Binding ResultadoFecha}"  FontAttributes="Bold" FontSize="20"/>
+
+
+            </StackLayout>
+            
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

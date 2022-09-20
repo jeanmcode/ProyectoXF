@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoXF.Vistas.MenuPrincipal" Title="Pagina Principal"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem />
+
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout VerticalOptions="Center">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Numero 1: " VerticalOptions="Center"/>
+                <Entry Placeholder="ESCRIBA SU num1" Keyboard="Numeric" Text="{Binding Num1}"  HorizontalOptions="StartAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Numero 2: " VerticalOptions="Center"/>
+                <Entry Placeholder="ESCRIBA SU num2" Keyboard="Numeric" Text="{Binding Num2}"  HorizontalOptions="StartAndExpand"/>
+
+            </StackLayout>
+
+            <Button VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextTransform="None"
+                Text="Alerta" x:Name="btnAlerta" Command="{Binding AlertaCommand}"/>
+            <Label Text="{Binding Resultado}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"
+                   FontSize="50"/>
+
+            <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Ir a Pagina2" 
+                    Command="{Binding NavPagina2Command}"/>
+            <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Ir a Pagina3" 
+                    Command="{Binding NavPagina3Command}"/>
+
+        </StackLayout>
+
+
+    </Grid>
+
+</ContentPage>
